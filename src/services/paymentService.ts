@@ -13,10 +13,9 @@ interface Event {
 
 async function postPayment(event: Event) {
   if (event.subscription === "invoice" && event.log.type === "credited") {
-
     const amount = event.log.invoice.amount;
     const fee = event.log.invoice.fee;
-    
+
     try {
       await starkbank.transfer.create([
         {
@@ -30,7 +29,7 @@ async function postPayment(event: Event) {
         },
       ]);
     } catch (error) {
-      //throw error
+      throw { type: "user", message: error.message, status: 400 };
     }
   }
 }

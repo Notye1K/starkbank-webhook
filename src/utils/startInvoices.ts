@@ -5,7 +5,7 @@ import starkbank from "starkbank";
 async function startInvoices() {
 
   const counter = { number: 0 };
-  const myInterval = setTimeout(createInvoices, 10800000);
+  const myInterval = setInterval(createInvoices, 10800000);
 
   function createInvoices() {
     counter.number++;
@@ -27,6 +27,7 @@ async function startInvoices() {
 
     starkbank.invoice.create(invoices);
   }
+  return myInterval;
 }
 
 export default startInvoices;
