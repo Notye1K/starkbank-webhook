@@ -1,5 +1,5 @@
 import app from "./app.js";
-import startInvoices from "./utils/startInvoices.js";
+import {startInvoices} from "./utils/startInvoices.js";
 
 startInvoices();
 

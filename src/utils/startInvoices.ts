@@ -32,4 +32,4 @@ async function startInvoices() {
   return intervals;
 }
 
-export default startInvoices;
+export { startInvoices };

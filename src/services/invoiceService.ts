@@ -1,4 +1,4 @@
-import startInvoices from "../utils/startInvoices.js";
+import { startInvoices } from "../utils/startInvoices.js";
 
 async function startInterval() {
   const intervals = await startInvoices();
